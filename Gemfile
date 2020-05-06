@@ -46,4 +46,5 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'timecop'
+  gem 'database_cleaner-active_record'
 end

@@ -1,5 +1,5 @@
 {
-  "name": "graphiti_auth_sample",
+  "name": "fullstack-cookbook",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
