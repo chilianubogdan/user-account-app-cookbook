@@ -30,7 +30,7 @@ Rails/Graphiti project:
 - BE: `rspec`
 - FE:
   1. start BE server `rails s -e test -p 5017`
-  2. start cypress `yarn run cypress open --project ./spec/`
+  2. start cypress `yarn run cypress open --project ./spec`
   3. Run all specs
 
 ## Goal: Full stack cookbook
