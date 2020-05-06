@@ -1,5 +1,5 @@
-describe("Registration Experience", () => {
-  it("Registers a new user", () => {
+describe("SignIn Experience", () => {
+  it("Signs In Existing User", () => {
     // Spec Setup preparing form data
     const password = "12341234";
 
