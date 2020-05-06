@@ -1,27 +1,23 @@
 <<template>
   <simple-form-layout header="Sign In">
     <form @submit.prevent="submit">
-      <div
-        v-if='credential.errors.base'
-        class='alert alert-danger'
-      >
+      <div v-if="credential.errors.base" class="alert alert-danger">
         {{ credential.errors.base.fullMessage }}
       </div>
       <text-input
         label="Email Address"
+        name="user[email]"
         v-model="credential.email"
         :error="credential.errors.email"
       />
       <text-input
         label="Password"
+        name="user[password]"
         type="password"
         v-model="credential.password"
         :error="credential.errors.password"
       />
-      <button
-        class="btn btn-primary"
-        type="submit"
-      >
+      <button class="btn btn-primary" type="submit">
         Sign In
       </button>
     </form>
@@ -29,11 +25,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import SimpleFormLayout from "../components/SimpleFormLayout.vue"
-import TextInput from '../components/TextInput.vue'
+import Vue from "vue";
+import SimpleFormLayout from "../components/SimpleFormLayout.vue";
+import TextInput from "../components/TextInput.vue";
 
-import { Credential } from '../models/credential'
+import { Credential } from "../models/credential";
 
 export default Vue.extend({
   components: {
@@ -42,17 +38,19 @@ export default Vue.extend({
   },
   data() {
     return {
-      credential: new Credential()
-    }
+      credential: new Credential(),
+    };
   },
   methods: {
     async submit() {
-      let success = await this.credential.save({ returnScope: Credential.includes(['user']) })
+      let success = await this.credential.save({
+        returnScope: Credential.includes(["user"]),
+      });
 
       if (success) {
-        this.$auth.signIn(this.credential, this.credential.user)
+        this.$auth.signIn(this.credential, this.credential.user);
       }
-    }
-  }
-})
+    },
+  },
+});
 </script>
