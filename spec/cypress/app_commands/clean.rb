@@ -7,4 +7,10 @@ else
   Post.delete_all if defined?(Post)
 end
 
-Rails.logger.info "APPCLEANED" # used by log_fail.rb
+
+pp "APP CLEANED BGY PP"
+
+Rails.logger.warn "APPCLEANED" # used by log_fail.rb
+# @todo: fix logging from command 
+# pp logger.inspect
+# pp Rails.inspect
